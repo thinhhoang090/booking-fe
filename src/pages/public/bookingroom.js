@@ -288,7 +288,7 @@ function PublicBookingRoom() {
           </div>
         </div>
       </section>
-
+{/* // */}
       <div
         class="modal fade"
         id="modaldeail"
