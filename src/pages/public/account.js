@@ -69,6 +69,7 @@ function PublicAccount(){
         var list = await response.json();
         setItemBookingService(list)
     }
+    console.log(items)
 
     return(
         

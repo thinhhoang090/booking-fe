@@ -21,6 +21,24 @@ var linkbanner = '';
 var description = '';
 async function saveRoom(event) {
     event.preventDefault();
+    const name = event.target.elements.tenphong.value
+    const price = event.target.elements.price.value
+    const maxPeople = event.target.elements.maxPeople.value
+
+ 
+    if(!name){
+        alert("Vui lòng nhập tên phòng")
+        return
+    }
+    if(!price){
+        alert("Vui lòng nhập giá phòng")
+        return
+    }
+    if(!maxPeople){
+        alert("Vui lòng nhập số người")
+        return
+    }
+
     var listTienIch = event.target.elements.tienich;
     var listUt = [];
     var i=0;
@@ -35,13 +53,15 @@ async function saveRoom(event) {
     if(ims != null){
         linkbanner = ims
     }
+
+
     var room = {
         "room":{
             "id": id,
-            "name": event.target.elements.tenphong.value,
+            "name": name,
             "image": linkbanner,
-            "price": event.target.elements.price.value,
-            "maxPeople": event.target.elements.maxPeople.value,
+            "price": price,
+            "maxPeople": maxPeople,
             "description": description,
             "numBed": event.target.elements.numBed.value,
             "category": {
@@ -51,7 +71,6 @@ async function saveRoom(event) {
         "listImage":listLinkImg,
         "listUtilityId":listUt
     }
-    console.log(room)
     const response = await fetch('http://localhost:8080/api/room/admin/create', {
         method: 'POST',
         headers: new Headers({
@@ -124,7 +143,6 @@ const AdminRoom = ()=>{
     function handleEditorChange(content, editor) {
         description = content;
     }
-    console.log(room);
 
 
     function handleItemSelectChange(e){
