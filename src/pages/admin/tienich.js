@@ -47,7 +47,7 @@ const AdminUlti = ()=>{
 
     $( document ).ready(function() {
         if(items.length > 0){
-            $('#example').DataTable();
+            $('#example').DataTable({language:{search :"Tìm kiếm"}});
         }
     });
 
