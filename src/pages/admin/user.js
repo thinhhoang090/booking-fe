@@ -37,7 +37,7 @@ const AdminUser = ()=>{
 
     $( document ).ready(function() {
         if(items.length > 0){
-            $('#example').DataTable();
+            $('#example').DataTable({language:{search :"Tìm kiếm"}});
         }
     });
 
@@ -90,6 +90,7 @@ const AdminUser = ()=>{
                         </div>
                     </div>
                 </div>
+            
                 <div class="col-sm-12">
                     <div class="wrapper">
                     <table id="example" class="table table-striped tablefix">

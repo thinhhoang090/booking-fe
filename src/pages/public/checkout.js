@@ -1,14 +1,7 @@
-import Header from '../../layout/user/header/header'
-import Footer from '../../layout/user/footer/footer'
-import banner from '../../assest/images/banner.jpg'
-import indeximg from '../../assest/images/index1.jpg'
+
 import momo from '../../assest/images/momo.webp'
-import {getMethod} from '../../services/request'
 import {formatMoney} from '../../services/money'
 import { useState, useEffect } from 'react'
-import { Parser } from "html-to-react";
-import avatar from '../../assest/images/avatar.jpg'
-import { json } from 'react-router-dom'
 import {toast } from 'react-toastify';
 
 var size = 6
@@ -16,6 +9,22 @@ var token = localStorage.getItem("token");
 
 async function requestPayMentMomo() {
     var cart = JSON.parse(localStorage.getItem("bookingcart"));
+    const cccd =     document.getElementById("cccd").value
+    const name =     document.getElementById("fullname").value
+    const phone =     document.getElementById("phone").value
+
+    if(!name){
+        alert("Vui lòng nhập tên")
+        return
+    }
+    if(!phone){
+        alert("Vui lòng nhập số điện thoại")
+        return
+    }
+    if(!cccd){
+        alert("Vui lòng nhập Căn cước công dân")
+        return
+    }
     var obj = {
         "ghichu":document.getElementById("ghichu").value,
         "fullname":document.getElementById("fullname").value,
@@ -36,7 +45,6 @@ async function requestPayMentMomo() {
         "returnUrl": returnurl,
         "listRoomId": cart.listroom,
     }
-    console.log(paymentDto)
     const res = await fetch(urlinit, {
         method: 'POST',
         headers: new Headers({
@@ -49,7 +57,7 @@ async function requestPayMentMomo() {
     if (res.status < 300) {
         window.open(result.url, '_blank');
     }
-    if (res.status == 417) {
+    if (res.status === 417) {
         toast.warning(result.defaultMessage);
     }
 
@@ -109,6 +117,7 @@ async function loadInitBooking(){
     });
     var user = await response.json();
     document.getElementById("fullname").value = user.fullname
+
     document.getElementById("phone").value = user.phone
     document.getElementById("tichdiem").innerHTML = user.point + ' điểm (Tích đủ 100 điểm, bạn sẽ được giảm giá 5%)'
     if(user.point != null){
