@@ -197,6 +197,7 @@ const AdminBooking = ()=>{
                                     <th>Mã đặt phòng</th>
                                     <th>Ngày đặt</th>
                                     <th>Ngày nhận phòng</th>
+                                    <th>Ngày trả phòng</th>
                                     <th>Số ngày</th>
                                     <th>Họ tên</th>
                                     <th>Số điện thoại</th>
@@ -211,6 +212,7 @@ const AdminBooking = ()=>{
                                     <td>{item.id}</td>
                                     <td>{item.createdTime} {item.createdDate}</td>
                                     <td>{item.fromDate}</td>
+                                    <td>{item.toDate}</td>
                                     <td>{item.numDate}</td>
                                     <td>{item.fullname}</td>
                                     <td>{item.phone}</td>

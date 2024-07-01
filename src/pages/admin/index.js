@@ -109,13 +109,6 @@ const HomeAdmin = ()=>{
                             </div>
                         </div>
                         <h2 class="page-header">Thông báo</h2>
-                        <p>Bạn có: </p>
-                        <ul class="list-group">
-                            <li data-bs-toggle="modal" data-bs-target="#modeltb" class="list-group-item d-flex justify-content-between align-items-center" id="lienHeMoi"><img alt="" src="../image/lienhe.png" />
-                                <a href="#example"> <b>
-                                        người dùng mới trong tháng này</b></a> <span></span>
-                                    <span id="numnewuser">0</span></li>
-                        </ul>
                         <div class="thongke">
                             <div class="row">
                                 <div class="col-md-4">
@@ -130,7 +123,7 @@ const HomeAdmin = ()=>{
                                 </div>
                                 <div class="col-md-4">
                                     <div class="thongke2">
-                                        <div class="texts">Số lượng quản trị</div>
+                                        <div class="texts">Số lượng Admin</div>
                                         <div>
                                         </div>
                                         <div class="soluong">

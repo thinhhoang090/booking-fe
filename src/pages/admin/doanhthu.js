@@ -148,7 +148,6 @@ const AdminDoanhThu = () => {
         <div class="col-md-3">
           <label class="lbbooking">Chọn năm cần xem</label>
           <select id="nams" class="form-control">
-            <option id="2023">2023</option>
             <option id="2024">2024</option>
             <option id="2025">2025</option>
             <option id="2026">2026</option>
